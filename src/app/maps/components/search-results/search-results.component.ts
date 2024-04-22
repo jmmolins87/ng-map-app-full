@@ -32,4 +32,15 @@ export class SearchResultsComponent {
     this._mapService.flyTo([ lng, lat ]);
   }
 
+  getDirections( place: Feature) {
+
+    if( !this._placesService.userLocation ) throw Error('Ubicación del usuario no disponible');
+
+    this._placesService.deletePlaces();
+
+    const start = this._placesService.userLocation;
+    const end = place.center as [ number, number ];
+    this._mapService.getRouteBetweenTwoPoints( start, end );
+  }
+
 }

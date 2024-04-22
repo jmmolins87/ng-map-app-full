@@ -1,0 +1,33 @@
+
+
+
+.search-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 270px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 5px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    max-height: 75vh;
+    overflow: overlay;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+} 
+/* Track */
+::-webkit-scrollbar-track {
+    background: #b5d0fa; 
+    border-radius: 10px;
+}  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #0d6efd; 
+}  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #0852c1; 
+}

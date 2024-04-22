@@ -11,7 +11,7 @@ import {
   Popup 
 } from 'mapbox-gl';
 
-import { PlacesService } from '../../services';
+import { MapService, PlacesService } from '../../services';
 
 @Component({
   selector: 'app-map-view',
@@ -23,7 +23,10 @@ export class MapViewComponent implements AfterViewInit {
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef
 
-  constructor( private _placesService: PlacesService ) {}
+  constructor( 
+      private _placesService: PlacesService,
+      private _mapService: MapService
+    ) {}
 
   ngAfterViewInit(): void {
     
@@ -46,5 +49,7 @@ export class MapViewComponent implements AfterViewInit {
       .setLngLat( this._placesService.userLocation )
       .setPopup( popup )
       .addTo( map )
+
+    this._mapService.setMap( map );
   }
 }
